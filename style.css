@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    transition: background-color 0.5s;
 }
 
 header {
@@ -11,6 +12,8 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 nav ul {
@@ -27,6 +30,24 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 main {
@@ -102,71 +123,45 @@ a:hover {
     background-color: #570b8c;
 }
 
-.login-container {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 50px auto;
-    text-align: center;
+.animated-btn {
+    position: relative;
+    overflow: hidden;
 }
 
-.login-box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-header h1 {
-    color: #6a0dad;
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group label {
+.animated-btn::after {
+    content: '';
     display: block;
-    margin-bottom: 5px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
 }
 
-.input-group input {
+.animated-btn:hover::after {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.remember-me input {
-    margin-right: 10px;
-}
-
-.login-btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #6a0dad;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-btn:hover {
-    background-color: #570b8c;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #6a0dad;
 }
